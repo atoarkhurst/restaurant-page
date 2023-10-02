@@ -1,33 +1,47 @@
-const menuPageLoad = function () {
+const contactPageLoad = function () {
 
+    // grab the content div
     const content = document.querySelector('#content');
 
-    const headline = document.createElement('h1');
-    headline.innerHTML = 'Our Menu';
+    // add the page header
+    createAndAppend( h1, content, { innerHTML: 'Get In Touch' } );
 
-    const entreeTitle = document.createElement('h2');
-    entreeTitle.innerHTML = "Main Entrees"
+    // add the contact info container
+    const contactContainer = createAndAppend( div, content, { classList: 'contact-container' } );
 
-    const foodImg1 = document.createElement('img');
-    foodImg1.src = 'https://placehold.co/600x400';
+    // add the entrees header to entree container
+    createAndAppend( h2, contactContainer, { innerHTML : 'Our Location'});
+    createAndAppend( p, contactContainer, { innerHTML : '123 Culinary St, Foodie City, NY 12345' } );
 
-    const foodTitle1 = document.createElement('h3')
+    createAndAppend( h2, contactContainer, { innerHTML : 'Business Hours'});
+    createAndAppend( p, contactContainer, { innerHTML : 'Monday - Sunday: 11am - 11pm' } );
 
-    const foodDescr1 = document.createElement('p');
+    createAndAppend( h2, contactContainer, { innerHTML : 'Phone Number'});
+    createAndAppend( p, contactContainer, { innerHTML : '+1 (555) 123-4567' } );
 
-    const foodImg2 = document.createElement('img');
-    foodImg2.src = 'https://placehold.co/600x400';
-
-    const foodImg3 = document.createElement('img');
-    foodImg3.src = 'https://placehold.co/600x400';
-
-
-
-    content.appendChild(headline);
-    content.appendChild(img);
-    content.appendChild(para);
 
 }
 
 
-export default pageLoad;
+function createAndAppend(tag, parent, attributes = {}) {
+    const element = document.createElement(tag);
+    for ( let key in attributes) {
+
+        if ( key === 'innerHTML'  ) {
+            element.innerHTML = attributes[key];
+
+        } else if ( key === 'classList') {
+            element.classList.add(attributes[key]);
+
+        } else {
+            element[key] = attributes[key];
+        }
+    }
+
+    parent.appendChild(element);
+    return element;
+
+}
+
+
+export default contactPageLoad;

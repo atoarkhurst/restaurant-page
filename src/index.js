@@ -1,5 +1,13 @@
 // import function 
-import pageLoad from './home';
+import homePageLoad from './home';
+import menuPageLoad from './menu';
+import contactPageLoad from './contact';
 
 
-pageLoad();
+homePageLoad();
+
+const menuTab = document.querySelector( '.menu-tab' );
+const contactTab = document.querySelector( '.contact-tab' );
+
+
+menuTab.addEventListener( 'click', menuPageLoad );
