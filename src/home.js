@@ -1,3 +1,6 @@
+// import css
+import './css/style.css';
+
 const homePageLoad = function () {
 
     const content = document.querySelector('#content');
@@ -13,17 +16,14 @@ const homePageLoad = function () {
     createAndAppend('div', nav, { innerHTML: 'Contact', classList: 'contact-tab' } );
 
 
+    const main = createAndAppend( 'main', content );
+    const welcomeContainer = createAndAppend( 'div', main, { classList: 'welcome-container'})
 
+    createAndAppend( 'h1', welcomeContainer, { innerHTML: 'Welcome to Bella Cucina Virtuale' } );
 
-    const headline = document.createElement('h1');
-    headline.innerHTML = 'Welcome to Bella Cucina Virtuale';
+    createAndAppend( 'p', welcomeContainer, { innerHTML: 'Elevate Your Senses, One Bite at a Time' } );
 
-    const img = document.createElement('img');
-    img.src = 'https://placehold.co/600x400';
-
-    const para = document.createElement('p');
-    para.innerHTML = 'Step into the virtual world of culinary elegance at Bella Cucina Virtuale, where innovation meets tradition.'
-
+    createAndAppend( 'button', welcomeContainer, { classList: 'btn', innerHTML: 'View Our Menu' } );
 
 }
 

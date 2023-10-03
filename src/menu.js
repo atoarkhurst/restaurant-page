@@ -1,3 +1,6 @@
+// import css
+import './css/style.css';
+
 const menuPageLoad = function () {
 
     // grab the content div

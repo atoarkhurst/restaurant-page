@@ -1,3 +1,6 @@
+// import css
+import './css/style.css';
+
 const contactPageLoad = function () {
 
     // grab the content div
