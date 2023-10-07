@@ -1,6 +1,9 @@
 // import css
 import './css/style.css';
 
+import bgImage from './assets/background-image.jpg';
+document.body.style.backgroundImage = `url(${bgImage})`;
+
 const contactPageLoad = function () {
 
     // grab the content div

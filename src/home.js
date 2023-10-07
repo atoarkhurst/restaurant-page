@@ -1,19 +1,30 @@
 // import css
 import './css/style.css';
+import bgImage from './assets/background-image.jpg';
+document.body.style.backgroundImage = `url(${bgImage})`;
+
 
 const homePageLoad = function () {
 
     const content = document.querySelector('#content');
 
-    const header = createAndAppend( 'header', content, { classList: 'header' } );
+    const header = createAndAppend( 'header', content, {classList: ['header' ]} );
 
-    const nav = createAndAppend( 'nav', header, { } );
+    const nav = createAndAppend( 'nav', header, {} );
 
-    createAndAppend('button', nav, { innerHTML: 'Home', classList: ['home-tab', 'nav-button']} );
+    const navList = createAndAppend('ul', nav, {classList: ['menu-bar']});
 
-    createAndAppend('button', nav, { innerHTML: 'Menu', classList: ['menu-tab' , 'nav-button']} );
+    const homeListItem = createAndAppend ('li', navList, {} );
 
-    createAndAppend('button', nav, { innerHTML: 'Contact', classList: ['contact-tab', 'nav-button'] } );
+    const menuListItem = createAndAppend ('li', navList, {} );
+
+    const contactListItem = createAndAppend ('li', navList, {} );
+
+    createAndAppend('a', homeListItem, { innerHTML: 'Home', classList: ['home-tab', 'menu-item']} );
+
+    createAndAppend('a', menuListItem, { innerHTML: 'Menu', classList: ['menu-tab' , 'menu-item']} );
+
+    createAndAppend('a', contactListItem, { innerHTML: 'Contact', classList: ['contact-tab', 'menu-item'] } );
 
 
     const main = createAndAppend( 'main', content );
@@ -21,7 +32,7 @@ const homePageLoad = function () {
 
     createAndAppend( 'h1', welcomeContainer, { innerHTML: 'Welcome to Bella Cucina Virtuale' } );
 
-    createAndAppend( 'p', welcomeContainer, { innerHTML: 'Elevate Your Senses, One Bite at a Time' } );
+    createAndAppend( 'p', welcomeContainer, { innerHTML: 'Elevate Your Senses, One Bite at a Time', classList: ['tagline'] } );
 
     createAndAppend( 'button', welcomeContainer, { classList: ['btn'], innerHTML: 'View Our Menu' } );
 
