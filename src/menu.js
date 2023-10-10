@@ -1,26 +1,30 @@
 // import css
 import './css/style.css';
-
+import { clearMainContent, createAndAppend, attachListeners } from './common';
 import bgImage from './assets/background-image.jpg';
+import { setupHeader, setupFooter } from './layout';
+
 document.body.style.backgroundImage = `url(${bgImage})`;
 
 const menuPageLoad = function () {
 
-    // grab the content div
-    const content = document.querySelector('#content');
+    clearMainContent();
+    
+    setupHeader();
+
 
     // add the page header
     createAndAppend( 'h1', content, { innerHTML: 'Our Menu' } );
 
     // add the entrees container
-    const entreeContainer = createAndAppend( 'div', content, { classList: 'entree-container'} );
+    const entreeContainer = createAndAppend( 'div', content, { classList: ['entree-container']} );
 
     // add the entrees header to entree container
     createAndAppend( 'h2', entreeContainer, { innerHTML : 'Main Entrees'});
 
 
     // add entree items div 
-    const entreeItems = createAndAppend( 'div', entreeContainer, { classList: 'entree-items' });
+    const entreeItems = createAndAppend( 'div', entreeContainer, { classList: ['entree-items'] });
 
     const entrees = [
         {
@@ -44,28 +48,9 @@ const menuPageLoad = function () {
         createAndAppend( 'img', entreeDiv, { src: entree.imgSrc } );
         createAndAppend('h3', entreeDiv, { innerHTML: entree.title });
         createAndAppend('p', entreeDiv, { innerHTML: entree.description });
-    })
-}
+    });
 
-
-function createAndAppend(tag, parent, attributes = {}) {
-    const element = document.createElement(tag);
-    for ( let key in attributes) {
-
-        if ( key === 'innerHTML'  ) {
-            element.innerHTML = attributes[key];
-
-        } else if ( key === 'classList') {
-            element.classList.add(attributes[key]);
-
-        } else {
-            element[key] = attributes[key];
-        }
-    }
-
-    parent.appendChild(element);
-    return element;
-
+    setupFooter();
 }
 
 

@@ -6,8 +6,36 @@ import contactPageLoad from './contact';
 
 homePageLoad();
 
-const menuTab = document.querySelector( '.menu-tab' );
-const contactTab = document.querySelector( '.contact-tab' );
+
+const content = document.querySelector('#content');
+
+//Attach event listener to content and switch tabs
+content.addEventListener('click', function(event) {
+    if ( event.target.matches('.menu-tab') ) {
+        handleTabClicked('menu') 
+    } else if ( event.target.matches('.home-tab') ) {
+        handleTabClicked('home');
+    } else if ( event.target.matches('.contact-tab') ) {
+        handleTabClicked('contact');
+    }
+});
 
 
-menuTab.addEventListener( 'click', menuPageLoad );
+
+//load page depending on tab clicked
+function handleTabClicked(tab) {
+    content.innerHTML = '';
+
+    if ( tab == 'menu' ) {
+        menuPageLoad();
+
+    } else if ( tab == 'home' ) {
+
+        homePageLoad(); 
+
+    } else if ( tab == 'contact' ) {
+
+        contactPageLoad();
+    }
+}
+
