@@ -12,12 +12,17 @@ const menuPageLoad = function () {
     
     setupHeader();
 
+    //add main section
+    const main = createAndAppend( 'main', content, {});
+
+    const menuContainer = createAndAppend( 'div', content, { classList: ['menu-container']});
+
 
     // add the page header
-    createAndAppend( 'h1', content, { innerHTML: 'Our Menu' } );
+    createAndAppend( 'h1', menuContainer, { innerHTML: 'Our Menu' } );
 
     // add the entrees container
-    const entreeContainer = createAndAppend( 'div', content, { classList: ['entree-container']} );
+    const entreeContainer = createAndAppend( 'div', menuContainer, { classList: ['entree-container']} );
 
     // add the entrees header to entree container
     createAndAppend( 'h2', entreeContainer, { innerHTML : 'Main Entrees'});
@@ -46,8 +51,9 @@ const menuPageLoad = function () {
     entrees.forEach( entree => {
         const entreeDiv = createAndAppend('div', entreeItems, { classList: [ 'entree' ] } );
         createAndAppend( 'img', entreeDiv, { src: entree.imgSrc } );
-        createAndAppend('h3', entreeDiv, { innerHTML: entree.title });
-        createAndAppend('p', entreeDiv, { innerHTML: entree.description });
+        const description = createAndAppend('div', entreeDiv, { classList: [ 'entree-descr'] } );
+        createAndAppend('h3', description, { innerHTML: entree.title });
+        createAndAppend('p', description, { innerHTML: entree.description });
     });
 
     setupFooter();

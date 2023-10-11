@@ -4,7 +4,7 @@ import menuPageLoad from './menu';
 import contactPageLoad from './contact';
 
 
-homePageLoad();
+menuPageLoad();
 
 
 const content = document.querySelector('#content');
