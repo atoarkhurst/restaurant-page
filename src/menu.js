@@ -15,7 +15,7 @@ const menuPageLoad = function () {
     //add main section
     const main = createAndAppend( 'main', content, {});
 
-    const menuContainer = createAndAppend( 'div', content, { classList: ['menu-container']});
+    const menuContainer = createAndAppend( 'div', main, { classList: ['menu-container']});
 
 
     // add the page header
@@ -31,9 +31,13 @@ const menuPageLoad = function () {
     // add entree items div 
     const entreeItems = createAndAppend( 'div', entreeContainer, { classList: ['entree-items'] });
 
+
+    
+  
+
     const entrees = [
         {
-            imgSrc: 'https://placehold.co/600x400',
+            imgSrc: 'https://placehold.co/300x200',
             title: 'Sous-Vide Lamb Shank',
             description: 'Tender lamb, slow-cooked to perfection and served atop a bed of saffron risotto. Accompanied by a rich red wine reduction sauce.'
     
@@ -41,20 +45,70 @@ const menuPageLoad = function () {
 
         {
 
-            imgSrc: 'https://placehold.co/600x400',
-            title: 'Sous-Vide Lamb Shank',
-            description: 'Tender lamb, slow-cooked to perfection and served atop a bed of saffron risotto. Accompanied by a rich red wine reduction sauce.'
+            imgSrc: 'https://placehold.co/300x200',
+            title: 'Lobster Thermidor Supreme',
+            description: 'Succulent lobster tail cooked in a creamy brandy sauce, gratinated with Parmigiano-Reggiano and served with hand-cut fries. A dish that speaks opulence.'
     
+        },
+
+        {
+
+            imgSrc: 'https://placehold.co/300x200',
+            title: 'Vegan Zen Bowl',
+            description: 'A wholesome assortment of quinoa, roasted vegetables, avocado, and a spiced tahini dressing. Nourishing and soul-satisfying.'
+    
+        }
+    ]
+
+      // add the desserts container
+      const dessertContainer = createAndAppend( 'div', menuContainer, { classList: ['dessert-container']} );
+
+    // add the desserts header to dessert container
+     createAndAppend( 'h2', dessertContainer, { innerHTML : 'Desserts'});
+
+      // add dessert items div
+      const dessertItems = createAndAppend( 'div', dessertContainer, { classList: ['dessert-items'] });
+
+      
+
+    const desserts = [
+
+        { 
+            imgSrc: 'https://placehold.co/300x200',
+            title: 'Molten Chocolate Lava Cake',
+            description: 'A decadent chocolate cake with a gooey center, served with a scoop of artisanal vanilla bean ice cream.'
+        }, 
+
+        { 
+            imgSrc: 'https://placehold.co/300x200',
+            title: 'Tiramisu Symphony',
+            description: 'Layers of coffee-soaked ladyfingers and a luxurious mascarpone filling, finished with a dusting of cocoa powder. A classic with a gourmet touch.'
+        },
+
+        { 
+            imgSrc: 'https://placehold.co/300x200',
+            title: 'Berry Bliss Parfait',
+            description: "Fresh seasonal berries layered between Greek yogurt and house-made granola. A perfect end that's both sweet and healthy."
         }
     ]
 
     entrees.forEach( entree => {
         const entreeDiv = createAndAppend('div', entreeItems, { classList: [ 'entree' ] } );
         createAndAppend( 'img', entreeDiv, { src: entree.imgSrc } );
-        const description = createAndAppend('div', entreeDiv, { classList: [ 'entree-descr'] } );
-        createAndAppend('h3', description, { innerHTML: entree.title });
-        createAndAppend('p', description, { innerHTML: entree.description });
+        const entreeInfo = createAndAppend('div', entreeDiv, { classList: [ 'entree-info'] } );
+        createAndAppend('h3', entreeInfo, { innerHTML: entree.title });
+        createAndAppend('p', entreeInfo, { innerHTML: entree.description });
     });
+
+ 
+
+    desserts.forEach( dessert => {
+        const dessertDiv = createAndAppend('div', dessertItems, { classList: ['dessert-items' ] } );
+        createAndAppend('img', dessertDiv, { src: dessert.imgSrc } );
+        const dessertInfo = createAndAppend('div', dessertDiv, { classList: [ 'dessert-descr'] } );
+        createAndAppend('h3', dessertInfo, { innerHTML: dessert.title });
+        createAndAppend('p', dessertInfo, { innerHTML: dessert.description });
+    } )
 
     setupFooter();
 }
