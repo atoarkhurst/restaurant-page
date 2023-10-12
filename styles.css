@@ -1,18 +1,19 @@
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap);
-body {
+/* Reset some default styles */
+body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
+}
+
+
+body {
     font-family: 'Roboto', sans-serif;
     color: white;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-main {
-   
-  }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
@@ -70,8 +71,6 @@ header {
 /* Home page */
 
 
-/* Body content  */
-
   .welcome-container {
     text-align: center;
     margin-top: -20rem;
@@ -117,20 +116,6 @@ header {
 
   .fab.fa-github {
     color: white;
-  }
-
-
-  /* Menu Page */
-
-  .menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh; 
-  }
-
-  .entree-container {
-    width: 60%
   }
 
 
