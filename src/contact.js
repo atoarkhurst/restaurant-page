@@ -15,17 +15,26 @@ const contactPageLoad = function () {
     createAndAppend( 'h1', content, { innerHTML: 'Get In Touch' } );
 
     // add the contact info container
-    const contactContainer = createAndAppend( 'div', content, { classList: ['contact-container'] } );
+    const infoContainer = createAndAppend( 'div', content, { classList: ['info-container'] } );
 
     // add the entrees header to entree container
-    createAndAppend( 'h2', contactContainer, { innerHTML : ['Our Location']});
-    createAndAppend( 'p', contactContainer, { innerHTML : ['123 Culinary St, Foodie City, NY 12345'] } );
+    const topInfo = createAndAppend( 'div', infoContainer, { classList: ['top-info']});
 
-    createAndAppend( 'h2', contactContainer, { innerHTML : ['Business Hours']});
-    createAndAppend( 'p', contactContainer, { innerHTML : ['Monday - Sunday: 11am - 11pm'] } );
+    const addressInfo = createAndAppend( 'div', topInfo, { classList: [ 'address-info']} );
+    createAndAppend( 'h2', addressInfo, { innerHTML : ['Address']});
+    createAndAppend( 'p', addressInfo, { innerHTML : ['123 Culinary St, Foodie City, NY 12345'] } );
 
-    createAndAppend( 'h2', contactContainer, { innerHTML : ['Phone Number']});
-    createAndAppend( 'p', contactContainer, { innerHTML : ['+1 (555) 123-4567'] } );
+    const contactInfo = createAndAppend( 'div', topInfo, { classList: [ 'contact-info']} );
+    createAndAppend( 'h2', contactInfo, { innerHTML : ['Contact Us']});
+    createAndAppend( 'h3', contactInfo, { innerHTML : ['Phone Number']});
+    createAndAppend( 'p', contactInfo, { innerHTML : ['+1 (555) 123-4567'] } );
+    createAndAppend( 'h3', contactInfo, { innerHTML : ['Email']});
+    createAndAppend( 'p', contactInfo, { innerHTML : ['bookings@email.com'] } );
+
+
+    const bottomInfo = createAndAppend('div', infoContainer, { classList: [ 'bottom-info']} );
+    createAndAppend( 'h2', bottomInfo, { innerHTML : ['Business Hours']});
+    createAndAppend( 'p', bottomInfo, { innerHTML : ['Monday - Sunday: 11am - 11pm'] } );
 
     setupFooter();
 }

@@ -1,122 +1,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap);
 /* Reset some default styles */
-body, h1, h2, h3, p {
+* {
     margin: 0;
     padding: 0;
 }
 
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 100vh;
 }
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-}
-
-:root {
-    --menu-bar-color: #1a1a1a;
-    --menu-bar-text-color: #fff;
-    --medium-font-size: 20px;
-  }
-  
-
-
-
-/* Header  */
-
-header {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    padding: 2rem;
-    background-color: var(--menu-bar-color);
-}
-
-.menu-bar {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-}
-
-.menu-item {
-    color: var(--menu-bar-text-color);
-    font-size: var(--medium-font-size);
-}
-
-.home-tab,
-.menu-tab,
-.contact-tab {
-  text-decoration: none;  /* Remove underline */
-  padding: 0.5rem 1rem;  /* Add some padding */
-  border-radius: 5px;  /* Rounded corners */
-  transition: background-color 0.3s ease;  /*for smooth color transition */
-}
-
-.home-tab:hover,
-.menu-tab:hover,
-.contact-tab:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
-  cursor: pointer;
-}
-
-
-/* Home page */
-
-
-  .welcome-container {
-    text-align: center;
-    margin-top: -20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .tagline {
-    font-size: 1.3rem;
-  }
-
-  .welcome-container > .btn {
-    padding: 1rem 2rem;
-  }
-
-  .btn {
-    font-family: inherit;
-  }
-
-
-  /* Footer  */
-
-  footer {
-    text-align: center;
-    background-color: var(--menu-bar-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  footer a {
-    color: #333; /* Or any color */
-    font-size: 1.5em;
-    margin: 0 10px;
-  }
-
-  .fab.fa-github {
-    color: white;
-  }
-
 
 /*# sourceMappingURL=styles.css.map*/

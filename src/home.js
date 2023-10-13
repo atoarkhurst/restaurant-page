@@ -13,9 +13,9 @@ const homePageLoad = function () {
     
     setupHeader();
 
-    const main = createAndAppend( 'main', content );
+    const content = document.querySelector('#content');
 
-    const welcomeContainer = createAndAppend( 'div', main, { classList: ['welcome-container']})
+    const welcomeContainer = createAndAppend( 'div', content, { classList: ['welcome-container']})
 
     createAndAppend( 'h1', welcomeContainer, { innerHTML: 'Welcome to Bella Cucina Virtuale' } );
 
