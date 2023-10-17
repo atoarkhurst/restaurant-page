@@ -1,7 +1,11 @@
 // import css
 import './css/style.css';
 import { clearMainContent, createAndAppend, attachListeners } from './common';
-import bgImage from './assets/background-image.jpg';
+import bgImage from './assets/background.jpg';
+import lambImg from './assets/lamb.jpg';
+import lobsterImg from './assets/lobster.jpg';
+import veganImg from './assets/vegan-bowl.jpg';
+
 import { setupHeader, setupFooter } from './layout';
 
 document.body.style.backgroundImage = `url(${bgImage})`;
@@ -37,7 +41,7 @@ const menuPageLoad = function () {
 
     const entrees = [
         {
-            imgSrc: 'https://placehold.co/300x200',
+            imgSrc: lambImg,
             title: 'Sous-Vide Lamb Shank',
             description: 'Tender lamb, slow-cooked to perfection and served atop a bed of saffron risotto. Accompanied by a rich red wine reduction sauce.'
     
@@ -45,7 +49,7 @@ const menuPageLoad = function () {
 
         {
 
-            imgSrc: 'https://placehold.co/300x200',
+            imgSrc: lobsterImg,
             title: 'Lobster Thermidor Supreme',
             description: 'Succulent lobster tail cooked in a creamy brandy sauce, gratinated with Parmigiano-Reggiano and served with hand-cut fries. A dish that speaks opulence.'
     
@@ -53,7 +57,7 @@ const menuPageLoad = function () {
 
         {
 
-            imgSrc: 'https://placehold.co/300x200',
+            imgSrc: veganImg,
             title: 'Vegan Zen Bowl',
             description: 'A wholesome assortment of quinoa, roasted vegetables, avocado, and a spiced tahini dressing. Nourishing and soul-satisfying.'
     
@@ -74,19 +78,16 @@ const menuPageLoad = function () {
     const desserts = [
 
         { 
-            imgSrc: 'https://placehold.co/300x200',
             title: 'Molten Chocolate Lava Cake',
             description: 'A decadent chocolate cake with a gooey center, served with a scoop of artisanal vanilla bean ice cream.'
         }, 
 
         { 
-            imgSrc: 'https://placehold.co/300x200',
             title: 'Tiramisu Symphony',
             description: 'Layers of coffee-soaked ladyfingers and a luxurious mascarpone filling, finished with a dusting of cocoa powder. A classic with a gourmet touch.'
         },
 
         { 
-            imgSrc: 'https://placehold.co/300x200',
             title: 'Berry Bliss Parfait',
             description: "Fresh seasonal berries layered between Greek yogurt and house-made granola. A perfect end that's both sweet and healthy."
         }
@@ -103,8 +104,7 @@ const menuPageLoad = function () {
  
 
     desserts.forEach( dessert => {
-        const dessertDiv = createAndAppend('div', dessertItems, { classList: ['dessert-items' ] } );
-        createAndAppend('img', dessertDiv, { src: dessert.imgSrc } );
+        const dessertDiv = createAndAppend('div', dessertItems, { classList: ['dessert-item' ] } );
         const dessertInfo = createAndAppend('div', dessertDiv, { classList: [ 'dessert-descr'] } );
         createAndAppend('h3', dessertInfo, { innerHTML: dessert.title });
         createAndAppend('p', dessertInfo, { innerHTML: dessert.description });

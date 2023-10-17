@@ -1,8 +1,9 @@
 
 import './css/style.css';
-import bgImage from './assets/background-image.jpg';
+import bgImage from './assets/background.jpg';
 import { clearMainContent,  createAndAppend } from './common';
 import { setupHeader, setupFooter } from './layout';
+import menuPageLoad from './menu';
 
 document.body.style.backgroundImage = `url(${bgImage})`;
 
@@ -15,13 +16,17 @@ const homePageLoad = function () {
 
     const content = document.querySelector('#content');
 
-    const welcomeContainer = createAndAppend( 'div', content, { classList: ['welcome-container']})
+    const main = createAndAppend('main', content );
+
+    const welcomeContainer = createAndAppend( 'div', main, { classList: ['welcome-container']})
 
     createAndAppend( 'h1', welcomeContainer, { innerHTML: 'Welcome to Bella Cucina Virtuale' } );
 
     createAndAppend( 'p', welcomeContainer, { innerHTML: 'Elevate Your Senses, One Bite at a Time', classList: ['tagline'] } );
 
-    createAndAppend( 'button', welcomeContainer, { classList: ['btn'], innerHTML: 'View Our Menu' } );
+   const menuBtn = createAndAppend( 'button', welcomeContainer, { classList: ['btn'], innerHTML: 'View Our Menu' } );
+
+    menuBtn.addEventListener('click', menuPageLoad);
 
     setupFooter();
 }
